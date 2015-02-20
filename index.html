@@ -29,11 +29,12 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiemdYSVVLRSJ9.g3lbg_eN0kztmsfIPxa9MQ';
 var map = L.mapbox.map('map', 'planemad.8a3d2a2b');
     
-    var featureLayer = L.mapbox.featureLayer('planemad.49dcb19a')
-    // hide all markers
-    .setFilter(function() { return false; })
+    var featureLayer = L.mapbox.featureLayer()
     .addTo(map);
-    
+
+// loads markers from the map `examples.map-0l53fhk2` on Mapbox,
+// if that map has markers
+featureLayer.loadID('planemad.49dcb19a');
 </script>
     
     
