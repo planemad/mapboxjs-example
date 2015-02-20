@@ -29,12 +29,23 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiemdYSVVLRSJ9.g3lbg_eN0kztmsfIPxa9MQ';
 var map = L.mapbox.map('map', 'planemad.8a3d2a2b');
     
-    var featureLayer = L.mapbox.featureLayer()
+var directions = L.mapbox.directions();
+
+var directionsLayer = L.mapbox.directions.layer(directions)
     .addTo(map);
 
-// loads markers from the map `examples.map-0l53fhk2` on Mapbox,
-// if that map has markers
-featureLayer.loadID('planemad.49dcb19a');
+var directionsInputControl = L.mapbox.directions.inputControl('inputs', directions)
+    .addTo(map);
+
+var directionsErrorsControl = L.mapbox.directions.errorsControl('errors', directions)
+    .addTo(map);
+
+var directionsRoutesControl = L.mapbox.directions.routesControl('routes', directions)
+    .addTo(map);
+
+var directionsInstructionsControl = L.mapbox.directions.instructionsControl('instructions', directions)
+    .addTo(map);
+    
 </script>
     
     
